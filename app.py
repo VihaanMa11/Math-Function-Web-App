@@ -22,6 +22,14 @@ def factorial():
     number = int(request.form['number'])
     result = math.factorial(number)
     return jsonify(result=result)
+# problem - 5 Modulus 
+@app.route("/modulus",method=["POST"])
+
+def modulo():
+    number1 = int(request.form['number1'])
+    number2 = int(request.form['number2'])
+    result = number1 % number2
+    return jsonify(result=result)
 
 # You can add more routes for each math function
 # for example, multiplication, square roots, etc.
