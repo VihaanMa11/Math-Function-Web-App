@@ -31,6 +31,12 @@ def modulo():
     result = number1 % number2
     return jsonify(result=result)
 
+def sqrt():
+    number = int(input("Enter a Number: "))
+    if number<0:
+        return "not possible"
+    return math.sqrt(number)
+
 # You can add more routes for each math function
 # for example, multiplication, square roots, etc.
 
