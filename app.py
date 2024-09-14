@@ -31,6 +31,13 @@ def modulo():
     result = number1 % number2
     return jsonify(result=result)
 
+@app.route('/add', methods=['POST'])
+def multiply():
+    num1 = float(request.form['num1'])
+    num2 = float(request.form['num2'])
+    result = num1 * num2
+    return jsonify(result=result)
+
 # You can add more routes for each math function
 # for example, multiplication, square roots, etc.
 
