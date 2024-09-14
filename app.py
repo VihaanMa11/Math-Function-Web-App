@@ -1,0 +1,30 @@
+from flask import Flask, request, render_template, jsonify
+import math
+
+app = Flask(__name__)
+
+# Home route
+@app.route('/')
+def index():
+    return render_template('index.html')
+
+# Example: Addition API
+@app.route('/add', methods=['POST'])
+def add():
+    num1 = float(request.form['num1'])
+    num2 = float(request.form['num2'])
+    result = num1 + num2
+    return jsonify(result=result)
+
+# Example: Factorial API
+@app.route('/factorial', methods=['POST'])
+def factorial():
+    number = int(request.form['number'])
+    result = math.factorial(number)
+    return jsonify(result=result)
+
+# You can add more routes for each math function
+# for example, multiplication, square roots, etc.
+
+if __name__ == '__main__':
+    app.run(debug=True)
