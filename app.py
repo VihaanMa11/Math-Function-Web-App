@@ -31,14 +31,14 @@ def modulo():
     result = number1 % number2
     return jsonify(result=result)
 
-@app.route('/add', methods=['POST'])
+@app.route('/mul', methods=['POST'])
 def multiply():
     num1 = float(request.form['num1'])
     num2 = float(request.form['num2'])
     result = num1 * num2
     return jsonify(result=result)
 
-@app.route('/add', methods=['POST'])
+@app.route('/div', methods=['POST'])
 def division():
     num1 = float(request.form['num1'])
     num2 = float(request.form['num2'])
